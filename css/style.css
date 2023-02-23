@@ -422,6 +422,11 @@ footer {
   color: var(--second-bg-color);
 }
 
+.send-info {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
 /* BREAKPOINTS */
 
 @media (max-width: 1200px) {

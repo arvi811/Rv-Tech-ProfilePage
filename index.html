@@ -162,18 +162,20 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
 
-        <form action="#">
+        <form name="submit-to-google-sheet">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+                <input type="text" name="Name" required placeholder="Full Name">
+                <input type="email" name="Email" required placeholder="Email Address">
             </div>
             <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
+                <input type="number" name="Number" required placeholder="Mobile Number">
+                <input type="text" name="Subject" required placeholder="Email Subject">
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
+            <textarea name="Message" cols="30" rows="10" required placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn"><br><br>
+            <span class="send-info" id="msg"></span>
         </form>
+
     </section>
     <footer class="footer">
         <div class="footer-text">
