@@ -76,28 +76,34 @@ const typed = new Typed(".multiple-text", {
   loop: true,
 });
 
-
 //submit to google sheet
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyXDydcYGVxd9_z8cpJo4G3HHF58Qg4q_vJqJVF8kF4D8utw33tWipJ23qODokI2JMI/exec'
-const form = document.forms['submit-to-google-sheet']
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbyXDydcYGVxd9_z8cpJo4G3HHF58Qg4q_vJqJVF8kF4D8utw33tWipJ23qODokI2JMI/exec";
+const form = document.forms["submit-to-google-sheet"];
 const msg = document.getElementById("msg");
 
-form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => {
-            msg.style.color = "#61b752";
-            msg.innerHTML = "Message sent Succesfully"
-            setTimeout(function () {
-                msg.innerHTML = "";
-            }, 5000)
-            form.reset();
-        })
-        .catch(error => {
-            msg.style.color = "#b00101";
-            msg.innerHTML = "Message sent Failed"
-            setTimeout(function () {
-                msg.innerHTML = "";
-            }, 5000)
-        })
-})
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => {
+      msg.style.color = "#61b752";
+      msg.innerHTML = "Message sent Succesfully";
+      setTimeout(function () {
+        msg.innerHTML = "";
+      }, 5000);
+      form.reset();
+    })
+    .catch((error) => {
+      msg.style.color = "#b00101";
+      msg.innerHTML = "Message sent Failed";
+      setTimeout(function () {
+        msg.innerHTML = "";
+      }, 5000);
+    });
+});
+
+// self functions
+
+function openSolarProject() {
+  alert("Solar Grace Project OnGoing");
+}
