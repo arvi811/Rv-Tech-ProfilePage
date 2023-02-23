@@ -1,7 +1,7 @@
 // toggle icon navbar
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
-
+var version = "1.0.1";
 {
   /* <i class='bx bx-x'></i> */
 }
