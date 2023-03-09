@@ -26,6 +26,27 @@ body {
   color: var(--text-color);
 }
 
+.loadLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.6;
+  z-index: 99999;
+  display: none;
+}
+.loadLayer img {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
+  height: 4%;
+}
+
 section {
   min-height: 100vh;
   padding: 10rem 9% 2rem;
@@ -46,7 +67,7 @@ section {
 }
 
 .header.sticky {
-  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.5);
+  border-bottom: 0.1px solid rgba(0, 0, 0, 0.5);
 }
 
 .logo {

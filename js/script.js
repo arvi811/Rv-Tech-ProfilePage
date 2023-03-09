@@ -1,7 +1,8 @@
 // toggle icon navbar
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
-var version = "1.0.1";
+let version = "1.0.1";
+
 {
   /* <i class='bx bx-x'></i> */
 }
@@ -81,24 +82,41 @@ const scriptURL =
   "https://script.google.com/macros/s/AKfycbyXDydcYGVxd9_z8cpJo4G3HHF58Qg4q_vJqJVF8kF4D8utw33tWipJ23qODokI2JMI/exec";
 const form = document.forms["submit-to-google-sheet"];
 const msg = document.getElementById("msg");
+const loader = document.getElementById("loadLayerId");
 
 form.addEventListener("submit", (e) => {
+  //getting date
+  var d = new Date();
+  var curr_date = d.getDate();
+  var curr_month = d.getMonth() + 1; //Months are zero based
+  var curr_year = d.getFullYear();
+  var dmy = curr_date + "-" + curr_month + "-" + curr_year;
+  var textcontrol = document.getElementById("timestampID");
+  textcontrol.value = dmy;
+
   e.preventDefault();
+  loader.style.display = "block";
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
-      msg.style.color = "#61b752";
-      msg.innerHTML = "Message sent Succesfully";
+      setTimeout(() => {
+        loader.style.display = "none";
+        msg.style.color = "#61b752";
+        msg.innerHTML = "Message sent Succesfully";
+      }, 1000);
       setTimeout(function () {
         msg.innerHTML = "";
-      }, 5000);
+      }, 2500);
       form.reset();
     })
     .catch((error) => {
-      msg.style.color = "#b00101";
-      msg.innerHTML = "Message sent Failed";
+      setTimeout(() => {
+        loader.style.display = "none";
+        msg.style.color = "#b00101";
+        msg.innerHTML = "Message sent Failed";
+      }, 1000);
       setTimeout(function () {
         msg.innerHTML = "";
-      }, 5000);
+      }, 2000);
     });
 });
 
