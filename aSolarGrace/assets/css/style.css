@@ -12,7 +12,7 @@
 
 :root {
   /* colors */
-  --violet-blue-crayola: rgb(4, 147, 12);
+  --violet-blue-crayola: rgb(3, 121, 9);
   --dark-cornflower-blue_a7: hsla(214, 88%, 27%, 0.07);
   --white: hsla(0, 0%, 100%, 1);
   --white_a3: hsla(0, 0%, 100%, 0.03);
@@ -144,8 +144,7 @@ body {
 }
 
 .has-bg-image2 {
-  background: linear-gradient(rgba(3, 41, 1, 0.911), rgba(37, 251, 4, 0.5));
-
+  background-color: var(--white);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -153,10 +152,10 @@ body {
 body.nav-active {
   overflow: hidden;
 }
-
+/* 
 ::-webkit-scrollbar {
   width: 10px;
-}
+} */
 
 ::-webkit-scrollbar-track {
   background-color: hsl(0, 0%, 98);
@@ -303,7 +302,7 @@ body.nav-active {
 }
 
 .header.active {
-  background: linear-gradient(rgba(3, 55, 1, 0.911), rgb(10, 71, 1));
+  background-color: var(--white);
   position: fixed;
   animation: slideIn 0.5s ease forwards;
 }
@@ -434,6 +433,7 @@ body.nav-active {
 \*-----------------------------------*/
 
 .hero {
+  min-height: 100vh;
   padding-block-start: calc(var(--section-padding) + 70px);
   text-align: center;
 }
@@ -542,6 +542,7 @@ body.nav-active {
 \*-----------------------------------*/
 
 .service {
+  min-height: 100vh;
   text-align: center;
 }
 
@@ -594,6 +595,7 @@ body.nav-active {
 \*-----------------------------------*/
 
 .about .container {
+  min-height: 100vh;
   display: grid;
   gap: 50px;
 }
@@ -684,12 +686,13 @@ body.nav-active {
 .stats {
   background-image: linear-gradient(
     to bottom,
-    var(--white) 50%,
-    var(--cultured) 50%
+    var(--charcoal) 50%,
+    var(--charcoal) 50%
   );
 }
 
 .stats-card {
+  background: linear-gradient(rgba(45, 1, 55, 0.5), rgba(247, 5, 243, 0.5));
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
